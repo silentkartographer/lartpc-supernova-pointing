@@ -26,17 +26,20 @@ The wire planes lie parallel to the global `yz`-plane, and ionization electrons 
 For each plane $`P \in \{U, V, Z\}`$ there are two in-plane unit vectors. $`\boldsymbol{\hat{\ell}}_P`$ runs **along** the wires. $`\hat{\mathbf{w}}_P`$ runs **across** them and points toward increasing wire index:
 
 ```math
+\begin{gathered}
 \hat{\mathbf{w}}_P = \left(0,\; -\sin\phi_P,\; \cos\phi_P\right),
 \qquad
 \hat{\boldsymbol{\ell}}_P = \left(0,\; \cos\phi_P,\; \sin\phi_P\right),
 \qquad
 \phi_Z = 0^\circ,\;\; \phi_U = +35.71^\circ,\;\; \phi_V = -35.71^\circ .
+\end{gathered}
 \tag{1}
 ```
 
 The direction of increasing time tick is
 
 ```math
+\begin{gathered}
 \hat{\mathbf{d}} = s_d\,\hat{\mathbf{x}},
 \qquad
 s_d =
@@ -44,6 +47,7 @@ s_d =
 +1 & \text{TPC 1} \\
 -1 & \text{TPC 0}
 \end{cases}
+\end{gathered}
 \tag{2}
 ```
 
@@ -66,17 +70,20 @@ With the TPC-dependent image convention used here, the same physical $`+x`$ step
 Start from the true initial Michel momentum $`\mathbf{p}=(p_x,p_y,p_z)`$, taken as close to the muon–Michel decay vertex as possible (before multiple Coulomb scattering bends the track). Near the vertex, the electron track is treated as a straight line parameterized by path length $`s`$ (in cm):
 
 ```math
+\begin{gathered}
 \hat{\mathbf{u}} = \frac{\mathbf{p}}{\lVert\mathbf{p}\rVert} = (u_x, u_y, u_z),
 \qquad
 \mathbf{r}(s) = \mathbf{r}_0 + s\,\hat{\mathbf{u}},
 \qquad
 d\mathbf{r} = \hat{\mathbf{u}}\,ds .
+\end{gathered}
 \tag{3}
 ```
 
 A step $`d\mathbf{r}`$ has a component along the drift axis, which sets the time coordinate, and a component across the wires, which sets the wire index. Each component is divided by its physical scale:
 
 ```math
+\begin{gathered}
 \frac{d(\text{ticks})}{ds}
 = \frac{\hat{\mathbf{u}}\cdot\hat{\mathbf{d}}}{v_{\rm drift}\,t_{\rm tick}}
 = \frac{s_d\,u_x}{v_{\rm drift}\,t_{\rm tick}},
@@ -84,6 +91,7 @@ A step $`d\mathbf{r}`$ has a component along the drift axis, which sets the time
 \frac{d(\text{wires})}{ds}
 = \frac{\hat{\mathbf{u}}\cdot\hat{\mathbf{w}}_P}{\mathrm{pitch}_P}
 = \frac{-u_y\sin\phi_P + u_z\cos\phi_P}{\mathrm{pitch}_P}.
+\end{gathered}
 \tag{4}
 ```
 
@@ -109,18 +117,22 @@ Normalizing $`\mathbf{d}_{2D,P}`$ gives the unit target vector $`\hat{\mathbf{u}
 The ratio of the two components is the projected slope in wires per tick. Collecting the constants into a plane factor $`\kappa_P`$:
 
 ```math
+\begin{gathered}
 \left(\frac{d(\text{wires})}{d(\text{ticks})}\right)_P
 = \kappa_P\,\frac{-u_y\sin\phi_P + u_z\cos\phi_P}{s_d\,u_x},
 \qquad
 \kappa_P \equiv \frac{v_{\rm drift}\,t_{\rm tick}}{\mathrm{pitch}_P}
 \;\;\bigl(\kappa_Z = 0.167,\;\; \kappa_{U,V} = 0.171\bigr).
+\end{gathered}
 \tag{6}
 ```
 
 Starting at the truth pixel $`(t_{0,P},\,w_{0,P})`$ nearest the decay vertex gives the local line of the initial direction in each image:
 
 ```math
+\begin{gathered}
 w \;\approx\; w_{0,P} + \left(\frac{d(\text{wires})}{d(\text{ticks})}\right)_P (t - t_{0,P}).
+\end{gathered}
 \tag{7}
 ```
 
@@ -133,19 +145,23 @@ The slope is unchanged by $`\hat{\mathbf{u}} \to -\hat{\mathbf{u}}`$. Both compo
 For three ordinary orthogonal projections of a 3D vector, the slopes satisfy $`m_{xz} = m_{yz}\,m_{xy}`$ when the denominators are nonzero. Wire planes have an analogous constraint! Removing the plane factor from Eq. (6) gives a normalized slope that depends only on the 3D direction and the wire angle:
 
 ```math
+\begin{gathered}
 a_P \;\equiv\; \frac{1}{\kappa_P}\left(\frac{d(\text{wires})}{d(\text{ticks})}\right)_P
 = \frac{-u_y\sin\phi_P + u_z\cos\phi_P}{s_d\,u_x}.
+\end{gathered}
 \tag{8}
 ```
 
 With the symmetric wire-angle parameterization used here $`\phi_Z = 0`$ and $`\phi_U = -\phi_V \equiv \phi`$:
 
 ```math
+\begin{gathered}
 a_Z = \frac{u_z}{s_d u_x},
 \qquad
 a_U = \frac{-u_y\sin\phi + u_z\cos\phi}{s_d u_x},
 \qquad
 a_V = \frac{+u_y\sin\phi + u_z\cos\phi}{s_d u_x}.
+\end{gathered}
 \tag{9}
 ```
 
@@ -175,16 +191,20 @@ The toy examples make it clear that small 2D errors can be amplified by the inve
 Each plane prediction is a directed image displacement $`\mathbf{q}_P = (\Delta t_P,\, \Delta w_P) = \mathbf{r}_{B,P} - \mathbf{r}_{A,P}`$. Write $`\mathbf{n}_P = (n_{P,y}, n_{P,z}) = (-\sin\phi_P,\, \cos\phi_P)`$ for the $`yz`$ part of $`\hat{\mathbf{w}}_P`$, and define two unknowns
 
 ```math
+\begin{gathered}
 b_y = \frac{u_y}{s_d\,u_x},
 \qquad
 b_z = \frac{u_z}{s_d\,u_x}.
+\end{gathered}
 \tag{11}
 ```
 
 Eq. (8) then says that every plane contributes **one linear equation**:
 
 ```math
+\begin{gathered}
 a_P = \frac{1}{\kappa_P}\frac{\Delta w_P}{\Delta t_P} = n_{P,y}\,b_y + n_{P,z}\,b_z .
+\end{gathered}
 \tag{12}
 ```
 
@@ -210,27 +230,33 @@ b_z = \frac{n_{P,y}\,a_Q - n_{Q,y}\,a_P}{\det},
 That return a 3D line, but the orientation $`\eta = \pm 1`$ is still undetermined:
 
 ```math
+\begin{gathered}
 \hat{\mathbf{u}}^{3D}_{PQ} = \eta_{PQ}\,\frac{(1,\; s_d b_y,\; s_d b_z)}{\sqrt{1 + b_y^2 + b_z^2}},
 \qquad \eta_{PQ}\in\{-1,+1\}.
+\end{gathered}
 \tag{14}
 ```
 
 To choose $`\eta`$, forward-project the candidate with Eq. (5), writing $`\hat{\boldsymbol{\pi}}_P(\mathbf{u})`$ for the unit-normalized projection into plane $`P`$, then keep the sign that best agrees with the two signed inputs:
 
 ```math
+\begin{gathered}
 \eta_{PQ} = \operatorname*{arg\,max}_{\eta=\pm1}\;
 \left[
 \hat{\mathbf{q}}_P\cdot\hat{\boldsymbol{\pi}}_P\!\left(\eta\,\mathbf{u}\right)
 +
 \hat{\mathbf{q}}_Q\cdot\hat{\boldsymbol{\pi}}_Q\!\left(\eta\,\mathbf{u}\right)
 \right].
+\end{gathered}
 \tag{15}
 ```
 
 Projecting $`\hat{\mathbf{u}}^{3D}_{PQ}`$ into the third, held-out plane $`R`$ and comparing with that plane's own prediction gives a consistency score:
 
 ```math
+\begin{gathered}
 C_{PQ\rightarrow R} = \hat{\mathbf{q}}_R \cdot \hat{\boldsymbol{\pi}}_R\!\left(\hat{\mathbf{u}}^{3D}_{PQ}\right) \in [-1, 1].
+\end{gathered}
 \tag{16}
 ```
 
@@ -264,9 +290,11 @@ flowchart TD
 **3D direction.** Average the pairwise unit directions of the corrected views and normalize:
 
 ```math
+\begin{gathered}
 \hat{\mathbf{u}}^{3D}_{\rm reco} =
 \frac{\hat{\mathbf{u}}^{3D}_{UV} + \hat{\mathbf{u}}^{3D}_{UZ} + \hat{\mathbf{u}}^{3D}_{VZ}}
 {\left\lVert \hat{\mathbf{u}}^{3D}_{UV} + \hat{\mathbf{u}}^{3D}_{UZ} + \hat{\mathbf{u}}^{3D}_{VZ} \right\rVert}.
+\end{gathered}
 \tag{17}
 ```
 
@@ -313,7 +341,6 @@ g.angle_deg(res.u3d, u)                                     # ~0 degrees        
 ---
 
 <sub>Related implementations of wire-coordinate transformations and direction merging appear in Pandora's LArContent (`LArRotationalTransformationPlugin` and `LArGeometryHelper`). Here the mapping is written explicitly in the tick/wire-index image coordinates and sign conventions used by this project.</sub>
-
 
 [Return to the project overview](../README.md) · [Cite LArPOINT](citing.md)
 
