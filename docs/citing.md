@@ -17,7 +17,7 @@ The project is currently cited as software. Its root [`CITATION.cff`](../CITATIO
   title        = {{lartpc_supernova_pointing}: Electron Directional Reconstruction
                   for Supernova Neutrino Pointing},
   howpublished = {\url{https://github.com/silentkartographer/lartpc-supernova-pointing}},
-  year         = {2024}
+  year         = {2026}
 }
 ```
 
