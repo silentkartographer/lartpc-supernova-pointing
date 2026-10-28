@@ -338,4 +338,4 @@ g.angle_deg(res.u3d, u)                                     # ~0 degrees        
 <sub>Related implementations of wire-coordinate transformations and direction merging appear in Pandora's LArContent (`LArRotationalTransformationPlugin` and `LArGeometryHelper`). Here the mapping is written explicitly in the tick/wire-index image coordinates and sign conventions used by this project.</sub>
  
  
-[Return to the project overview](../README.md) · [Cite LArPOINT](citing.md)
+[Return to the project overview](../README.md) · [Cite This Project](citing.md)
