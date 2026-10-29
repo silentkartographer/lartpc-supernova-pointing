@@ -9,7 +9,7 @@ The project is currently cited as software. Its root [`CITATION.cff`](../CITATIO
 > Utaegbulam, Hilary. *larptc-supernova-pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing*. https://github.com/silentkartographer/lartpc-supernova-pointing
 
 
-## BibTeX starting point
+## BibTeX 
 
 ```bibtex
 @misc{utaegbulam_lartpc_supernova_pointing,
@@ -18,6 +18,19 @@ The project is currently cited as software. Its root [`CITATION.cff`](../CITATIO
                   for Supernova Neutrino Pointing},
   howpublished = {\url{https://github.com/silentkartographer/lartpc-supernova-pointing}},
   year         = {2026}
+}
+```
+Also cite DSNT, which is used heavily in this project. 
+
+```bibtex
+@misc{nibali2018numericalcoordinateregressionconvolutional,
+      title={Numerical Coordinate Regression with Convolutional Neural Networks}, 
+      author={Aiden Nibali and Zhen He and Stuart Morgan and Luke Prendergast},
+      year={2018},
+      eprint={1801.07372},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/1801.07372}, 
 }
 ```
 
