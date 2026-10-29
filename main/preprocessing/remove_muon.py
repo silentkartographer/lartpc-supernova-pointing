@@ -17,7 +17,7 @@ from tqdm import tqdm
 import warp as wp
 from warpconvnet.geometry.types.voxels import Voxels
 
-from larpoint.segmentation.sparse_unet import (
+from main.segmentation.sparse_unet import (
     SparseUNet2D,
     SparseUNetConfig,
     robust_zscore_gpu,
@@ -26,13 +26,13 @@ from larpoint.segmentation.sparse_unet import (
     _build_features,
     _pick,
 )
-from larpoint.vertex.dsnt_vertex import (
+from main.vertex.dsnt_vertex import (
     UNetDSNT,
     VertexConfig,
     coords_to_pixels,
     spatial_softmax2d,
 )
-from larpoint.paths import (
+from main.paths import (
     DEFAULT_SEG_CKPTS,
     DEFAULT_VERTEX_CKPTS,
     OUTPUT_ROOT,

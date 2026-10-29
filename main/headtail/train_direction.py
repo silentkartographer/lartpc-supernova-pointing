@@ -4,7 +4,7 @@
 
 Each view predicts Point A (the muon-Michel vertex, supervised) and Point B (unsupervised; it only
 has to make A->B point along the electron's initial direction). Training couples the three views
-through cross-view tick constraints; see docs/losses.md.
+through cross-view tick constraints; see losses.py and training.py in this folder.
 """
 from __future__ import annotations
 import os

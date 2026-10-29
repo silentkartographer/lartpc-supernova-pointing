@@ -2,7 +2,7 @@
 
     python tools/make_geometry_figures.py
 
-Everything is computed with larpoint.geometry.
+Everything is computed with main.geometry.
 """
 import sys
 from pathlib import Path
@@ -15,7 +15,7 @@ import numpy as np
 from matplotlib.patches import Arc, FancyArrowPatch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from larpoint import geometry as g  # noqa: E402
+from main import geometry as g  # noqa: E402
 
 OUT = Path(__file__).resolve().parents[1] / "assets" / "geometry"
 OUT.mkdir(parents=True, exist_ok=True)

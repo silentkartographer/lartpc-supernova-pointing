@@ -33,13 +33,13 @@ import torch.nn.functional as F
 import warp as wp
 from torchvision import models as tvm
 
-from larpoint.vertex.dsnt_vertex import UNetDSNT, VertexConfig
-from larpoint.preprocessing.remove_muon import load_sparse_model, process_file
-from larpoint.headtail.models import DenseModelSMP
-from larpoint.headtail.visualization import _apply_priors_and_order_for_eval
-from larpoint.headtail.physics_utils import unit_from_points
-from larpoint.headtail.consistency import apply_consistency_pipeline, predict_view_from_3d_batch
-from larpoint.paths import (
+from main.vertex.dsnt_vertex import UNetDSNT, VertexConfig
+from main.preprocessing.remove_muon import load_sparse_model, process_file
+from main.headtail.models import DenseModelSMP
+from main.headtail.visualization import _apply_priors_and_order_for_eval
+from main.headtail.physics_utils import unit_from_points
+from main.headtail.consistency import apply_consistency_pipeline, predict_view_from_3d_batch
+from main.paths import (
     DEFAULT_SEG_CKPTS,
     DEFAULT_VERTEX_CKPTS,
     DEFAULT_BREMS_CKPT,

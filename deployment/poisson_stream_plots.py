@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figures for the Poisson-stream study (reads the CSV logs written by larpoint.deployment.poisson_stream).
+"""Figures for the Poisson-stream study (reads the CSV logs written by main.deployment.poisson_stream).
 """
 # Generates figures from the simulation output CSVs.
 # Produces (under <output_dir>/plots/):
@@ -25,7 +25,7 @@ import os
 import argparse
 import math
 
-from larpoint.paths import OUTPUT_ROOT
+from main.paths import OUTPUT_ROOT
 
 import numpy as np
 import pandas as pd

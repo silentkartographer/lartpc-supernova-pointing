@@ -10,7 +10,7 @@ import json
 from dataclasses import dataclass, field
 from typing import Tuple, Dict, List
 
-from larpoint.paths import OUTPUT_ROOT
+from main.paths import OUTPUT_ROOT
 
 import numpy as np
 import torch

@@ -9,7 +9,7 @@ A pure-NumPy reference implementation of every coordinate transformation used by
 
 The derivations are written out in ``docs/coordinate_transforms.md``; the equation numbers in
 the docstrings below refer to that page. The batched PyTorch versions used during training and
-inference live in :mod:`larpoint.headtail.consistency` and are tested against this module.
+inference live in :mod:`main.headtail.consistency` and are tested against this module.
 
 Conventions
 -----------
@@ -237,7 +237,7 @@ def geometric_vote(
     reverse that plane if ``C < -flip_threshold``, drop it if ``|C| < drop_threshold``.
     """
     scores = {R: heldout_score(q, P, Q, R, s_d) for P, Q, R in PAIRS}
-    order = ("Z", "V", "U")  # same tie-breaking order as larpoint.headtail.consistency
+    order = ("Z", "V", "U")  # same tie-breaking order as main.headtail.consistency
     decisive = max(order, key=lambda p: abs(scores[p]))
     C = scores[decisive]
     out = {p: np.asarray(q[p], float).copy() for p in PLANES}

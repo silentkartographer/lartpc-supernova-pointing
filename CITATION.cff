@@ -1,12 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "lartpc_supernova_pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing"
+title: "lartpc-supernova-pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing"
 authors:
   - family-names: Utaegbulam
     given-names: Hilary
 repository-code: "https://github.com/silentkartographer/lartpc-supernova-pointing"
 url: "https://github.com/silentkartographer/lartpc-supernova-pointing"
+version: 1.0.0
+date-released: "2026-10-29"
+license: MIT
 keywords:
   - LArTPC
   - supernova neutrinos
@@ -15,7 +18,7 @@ keywords:
   - machine learning
 preferred-citation:
   type: software
-  title: "lartpc_supernova_pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing"
+  title: "lartpc-supernova-pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing"
   authors:
     - family-names: Utaegbulam
       given-names: Hilary

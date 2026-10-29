@@ -6,7 +6,7 @@ The project is currently cited as software. Its root [`CITATION.cff`](../CITATIO
 
 ## Suggested reference
 
-> Utaegbulam, Hilary. *larptc-supernova-pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing*. https://github.com/silentkartographer/lartpc-supernova-pointing
+> Utaegbulam, Hilary. *lartpc-supernova-pointing: Electron Directional Reconstruction for Supernova Neutrino Pointing*. https://github.com/silentkartographer/lartpc-supernova-pointing
 
 
 ## BibTeX 
@@ -14,7 +14,7 @@ The project is currently cited as software. Its root [`CITATION.cff`](../CITATIO
 ```bibtex
 @misc{utaegbulam_lartpc_supernova_pointing,
   author       = {Utaegbulam, Hilary},
-  title        = {{lartpc_supernova_pointing}: Electron Directional Reconstruction
+  title        = {{lartpc-supernova-pointing}: Electron Directional Reconstruction
                   for Supernova Neutrino Pointing},
   howpublished = {\url{https://github.com/silentkartographer/lartpc-supernova-pointing}},
   year         = {2026}

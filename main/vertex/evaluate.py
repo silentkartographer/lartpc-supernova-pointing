@@ -19,7 +19,7 @@ from tqdm import tqdm
 
 import segmentation_models_pytorch as smp
 
-from larpoint.paths import DEFAULT_VERTEX_DIR, OUTPUT_ROOT
+from main.paths import DEFAULT_VERTEX_DIR, OUTPUT_ROOT
 
 
 def spatial_softmax2d(logits: torch.Tensor, temperature: float = 1.0) -> torch.Tensor:

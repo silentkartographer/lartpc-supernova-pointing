@@ -1,11 +1,11 @@
-"""Tests for the wire-plane geometry (larpoint.geometry).
+"""Tests for the wire-plane geometry (main.geometry).
 
 Run with:  pytest -q
 """
 import numpy as np
 import pytest
 
-from larpoint import geometry as g
+from main import geometry as g
 
 
 def random_directions(n, seed=0, min_abs_ux=0.05):
@@ -157,7 +157,7 @@ def test_reconstruct_3d_is_drop_aware():
 # ---------------------------------------------------------------------------- agreement with the torch code
 def test_matches_batched_torch_implementation():
     torch = pytest.importorskip("torch")
-    tc = pytest.importorskip("larpoint.headtail.consistency", reason="Research PyTorch module is uploaded in a later stage")
+    tc = pytest.importorskip("main.headtail.consistency")
 
     rng = np.random.default_rng(11)
     u = random_directions(600, seed=11)

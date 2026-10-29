@@ -4,7 +4,7 @@ Wire-plane LArTPC readouts are projections of a complete 3D trajectory. Each rea
  
 * **3D → 2D** to map the true initial electron momentum to each wire plane. This serves as the ground truth training target in every view.
 * **2D → 3D** used to reconstruct a detector-space direction from two nondegenerate wire plane directions, with a third view providing redundancy. The same algebra yields a **consistency condition** that the three views must satisfy, and that condition drives the voting system that is introduced later.
-Everything on this page is implemented in [`larpoint/geometry.py`](../larpoint/geometry.py) (pure NumPy) and checked in [`tests/test_geometry.py`](../tests/test_geometry.py). The figures are drawn from that module by [`tools/make_geometry_figures.py`](../tools/make_geometry_figures.py).
+Everything on this page is implemented in [`main/geometry.py`](../main/geometry.py) (pure NumPy) and checked in [`tests/test_geometry.py`](../tests/test_geometry.py). The figures are drawn from that module by [`tools/make_geometry_figures.py`](../tools/make_geometry_figures.py).
  
 **Contents**
 1. [Detector frame and conventions](#1-detector-frame-and-conventions)
@@ -301,7 +301,7 @@ In the drop-aware version, a dropped view removes the two pairs that use it, so 
  
 ## 6. Equation → code map
  
-| Eq. | Quantity | NumPy reference ([`larpoint/geometry.py`](../larpoint/geometry.py)) | PyTorch (used in training / inference) |
+| Eq. | Quantity | NumPy reference ([`main/geometry.py`](../main/geometry.py)) | PyTorch (used in training / inference) |
 |:---:|---|---|---|
 | 1 | $`\hat{\mathbf{w}}_P`$, $`\hat{\boldsymbol{\ell}}_P`$ | `wire_normal`, `wire_direction` | `_n_perp_from_theta_deg` in `headtail/physics_utils.py` |
 | 2 | drift sign $`s_d`$ | `drift_sign` | `headtail/dataset.py` |
@@ -319,7 +319,7 @@ In the drop-aware version, a dropped view removes the two pairs that use it, so 
  
 ```python
 import numpy as np
-from larpoint import geometry as g
+from main import geometry as g
  
 u = np.array([0.42, 0.55, 0.72]); u /= np.linalg.norm(u)    # true 3D direction
 q = {p: g.project(u, p, s_d=+1) for p in g.PLANES}          # three 2D views   (Eq. 5)
@@ -338,4 +338,4 @@ g.angle_deg(res.u3d, u)                                     # ~0 degrees        
 <sub>Related implementations of wire-coordinate transformations and direction merging appear in Pandora's LArContent (`LArRotationalTransformationPlugin` and `LArGeometryHelper`). Here the mapping is written explicitly in the tick/wire-index image coordinates and sign conventions used by this project.</sub>
  
  
-[Return to the project overview](../README.md) · [Cite This Project](citing.md)
+[Return to the project overview](../README.md) · [Gallery](gallery.md) · [Cite This Project](citing.md)

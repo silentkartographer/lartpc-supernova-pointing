@@ -19,40 +19,40 @@ import matplotlib.pyplot as _plt
 import warp as wp
 from warpconvnet.geometry.types.voxels import Voxels
 
-from larpoint.vertex.dsnt_vertex import (
+from main.vertex.dsnt_vertex import (
     UNetDSNT,
     VertexConfig,
     coords_to_pixels,
     spatial_softmax2d,
 )
-from larpoint.segmentation.sparse_unet import (
+from main.segmentation.sparse_unet import (
     SparseUNet2D,
     SparseUNetConfig,
 )
-from larpoint.preprocessing.remove_muon import (
+from main.preprocessing.remove_muon import (
     load_sparse_model,
     load_vertex_model,
     process_file,
 )
 
-from larpoint.headtail.models import DenseModelSMP, DenseModel, DenseModelConvNeXt
-from larpoint.headtail.physics_utils import (
+from main.headtail.models import DenseModelSMP, DenseModel, DenseModelConvNeXt
+from main.headtail.physics_utils import (
     spatial_softmax2d_logits,
     dsnt_expectation,
     unit_from_points,
     spatial_softmax2d_logits as _ssm,
 )
-from larpoint.headtail.consistency import (
+from main.headtail.consistency import (
     apply_consistency_pipeline,
     reconstruct_3d_from_pair_batch,
     predict_view_from_3d_batch,
 )
-from larpoint.headtail.visualization import (
+from main.headtail.visualization import (
     _apply_priors_and_order_for_eval,
     save_thesis_vector_figure,
     save_bragg_figure_dense,
 )
-from larpoint.paths import (
+from main.paths import (
     DEFAULT_SEG_CKPTS,
     DEFAULT_VERTEX_CKPTS,
     DEFAULT_BREMS_CKPT,
@@ -64,7 +64,7 @@ _plot_registry = {}
 
 def _try_import_plot(fn_name):
     try:
-        from larpoint.pipeline import plots as _m
+        from main.pipeline import plots as _m
         fn = getattr(_m, fn_name, None)
         if fn is not None:
             _plot_registry[fn_name] = fn
